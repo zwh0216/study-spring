@@ -1,6 +1,6 @@
 package com.example.studyspring.contronller;
 
-import com.example.studyspring.dto.materialUpdateDto;
+import com.example.studyspring.dto.MaterialUpdateDto;
 import com.example.studyspring.model.Material;
 import com.example.studyspring.model.Result;
 import com.example.studyspring.service.MaterialService;
@@ -19,15 +19,15 @@ public class MaterialControl {
     MaterialService materialService;
 
     // 查询所有
-    @RequestMapping(path="/query", method=RequestMethod.GET)
-    public Result<List<Material>> queryMaterial () {
+    @RequestMapping(path = "/query", method = RequestMethod.GET)
+    public Result<List<Material>> queryMaterial() {
         List<Material> materialList = materialService.getAllMaterial();
         return new Result<>(200, "查询成功", materialList);
     }
 
     // 新增单条数据
     @RequestMapping(path = "/add", method = RequestMethod.POST)
-    public Result addMaterial(@Valid @RequestBody materialUpdateDto material) {
+    public Result addMaterial(@Valid @RequestBody MaterialUpdateDto material) {
         try {
             materialService.insertMaterial(material);
             return new Result<>(200, "新增成功");
@@ -49,7 +49,7 @@ public class MaterialControl {
 
     // 删除单条数据
     @RequestMapping(path = "/update/{id}", method = RequestMethod.POST)
-    public Result updateMaterial(@Valid @RequestBody materialUpdateDto material) {
+    public Result updateMaterial(@Valid @RequestBody MaterialUpdateDto material) {
         try {
             materialService.updateMaterial(material);
             return new Result<>(200, "更新成功");

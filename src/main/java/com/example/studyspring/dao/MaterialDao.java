@@ -1,6 +1,6 @@
 package com.example.studyspring.dao;
 
-import com.example.studyspring.dto.materialUpdateDto;
+import com.example.studyspring.dto.MaterialUpdateDto;
 import com.example.studyspring.model.Material;
 import org.apache.ibatis.annotations.*;
 
@@ -15,12 +15,12 @@ public interface MaterialDao {
     List<Material> findAllMaterialById();
 
     @Insert("INSERT INTO raw_material (id, name, `key`) VALUES(#{id}, #{name}, #{key})")
-    int insertMaterial(materialUpdateDto material);
+    int insertMaterial(MaterialUpdateDto material);
 
     @Delete("DELETE FROM raw_material WHERE id = #{id}")
     int deleteMaterial(String id);
 
     @Update("UPDATE raw_material SET name = #{name} WHERE id = #{id} ")
-    int updateMaterial(materialUpdateDto material);
+    int updateMaterial(MaterialUpdateDto material);
 
 }

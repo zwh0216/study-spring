@@ -6,7 +6,7 @@ import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;
 
 @Data
-public class materialUpdateDto {
+public class MaterialUpdateDto {
     @NotEmpty(message = "id不能为空")
     private String id;
 
