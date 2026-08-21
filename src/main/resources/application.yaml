@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/study_spring?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://localhost:3306/study_spring
     # 数据库用户名[reference:8]
     username: root
     # 数据库密码[reference:9]
@@ -9,6 +9,7 @@ spring:
       maximum-pool-size: 10
       minimum-idle: 5
       idle-timeout: 30000
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
 mybatis:
   type-aliases-package: com.example.studyspring.model

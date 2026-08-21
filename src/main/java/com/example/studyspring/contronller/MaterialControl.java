@@ -38,7 +38,7 @@ public class MaterialControl {
 
     // 删除单条数据
     @RequestMapping(path = "/delete/{id}", method = RequestMethod.DELETE)
-    public Result deleteMaterial(@PathVariable("id") String id) {
+    public Result deleteMaterial(@PathVariable("id") Integer id) {
         try {
             materialService.deleteMaterial(id);
             return new Result<>(200, "删除成功");

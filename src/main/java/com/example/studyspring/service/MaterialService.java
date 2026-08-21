@@ -1,6 +1,6 @@
 package com.example.studyspring.service;
 
-import com.example.studyspring.dao.MaterialDao;
+import com.example.studyspring.mapper.MaterialMapper;
 import com.example.studyspring.dto.MaterialUpdateDto;
 import com.example.studyspring.model.Material;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,26 +12,26 @@ import java.util.List;
 public class MaterialService {
 
     @Autowired
-    private MaterialDao materialDao;
+    private MaterialMapper materialMapper;
 
-    public Material getMaterialById(String id) {
-        return materialDao.findMaterialById(id);
+    public Material getMaterialById(Integer id) {
+        return materialMapper.findMaterialById(id);
     }
 
     public List<Material> getAllMaterial() {
-        return materialDao.findAllMaterialById();
+        return materialMapper.findAllMaterialById();
     }
 
     public int insertMaterial(MaterialUpdateDto material) {
-        return materialDao.insertMaterial(material);
+        return materialMapper.insertMaterial(material);
     }
 
 
-    public int deleteMaterial(String id) {
-        return materialDao.deleteMaterial(id);
+    public int deleteMaterial(Integer id) {
+        return materialMapper.deleteMaterial(id);
     }
 
     public int updateMaterial(MaterialUpdateDto material){
-        return materialDao.updateMaterial(material);
+        return materialMapper.updateMaterial(material);
     }
 }
